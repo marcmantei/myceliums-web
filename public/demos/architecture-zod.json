@@ -1,0 +1,167 @@
+{
+  "services": [
+    {
+      "id": "core",
+      "label": "Core Types",
+      "member_count": 120,
+      "top_symbols": [
+        "ZodType",
+        "ZodSchema",
+        "parse"
+      ]
+    },
+    {
+      "id": "string",
+      "label": "String",
+      "member_count": 45,
+      "top_symbols": [
+        "ZodString",
+        "email",
+        "uuid"
+      ]
+    },
+    {
+      "id": "number",
+      "label": "Number",
+      "member_count": 30,
+      "top_symbols": [
+        "ZodNumber",
+        "int",
+        "positive"
+      ]
+    },
+    {
+      "id": "object",
+      "label": "Object",
+      "member_count": 55,
+      "top_symbols": [
+        "ZodObject",
+        "shape",
+        "extend"
+      ]
+    },
+    {
+      "id": "array",
+      "label": "Array",
+      "member_count": 25,
+      "top_symbols": [
+        "ZodArray",
+        "element",
+        "nonempty"
+      ]
+    },
+    {
+      "id": "union",
+      "label": "Union / Enum",
+      "member_count": 35,
+      "top_symbols": [
+        "ZodUnion",
+        "ZodEnum",
+        "discriminatedUnion"
+      ]
+    },
+    {
+      "id": "effects",
+      "label": "Effects",
+      "member_count": 20,
+      "top_symbols": [
+        "ZodEffects",
+        "transform",
+        "refine"
+      ]
+    },
+    {
+      "id": "error",
+      "label": "Error Handling",
+      "member_count": 28,
+      "top_symbols": [
+        "ZodError",
+        "ZodIssue",
+        "addIssue"
+      ]
+    },
+    {
+      "id": "coerce",
+      "label": "Coercion",
+      "member_count": 15,
+      "top_symbols": [
+        "coerce",
+        "preprocess",
+        "pipeline"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "source": "Core Types",
+      "target": "String",
+      "count": 18
+    },
+    {
+      "source": "Core Types",
+      "target": "Number",
+      "count": 15
+    },
+    {
+      "source": "Core Types",
+      "target": "Object",
+      "count": 22
+    },
+    {
+      "source": "Core Types",
+      "target": "Array",
+      "count": 12
+    },
+    {
+      "source": "Core Types",
+      "target": "Union / Enum",
+      "count": 14
+    },
+    {
+      "source": "Core Types",
+      "target": "Error Handling",
+      "count": 20
+    },
+    {
+      "source": "Object",
+      "target": "String",
+      "count": 8
+    },
+    {
+      "source": "Object",
+      "target": "Number",
+      "count": 6
+    },
+    {
+      "source": "Object",
+      "target": "Array",
+      "count": 7
+    },
+    {
+      "source": "Effects",
+      "target": "Core Types",
+      "count": 10
+    },
+    {
+      "source": "Effects",
+      "target": "Error Handling",
+      "count": 5
+    },
+    {
+      "source": "Coercion",
+      "target": "Core Types",
+      "count": 8
+    },
+    {
+      "source": "Coercion",
+      "target": "String",
+      "count": 4
+    },
+    {
+      "source": "Union / Enum",
+      "target": "Error Handling",
+      "count": 6
+    }
+  ],
+  "mermaid": "graph TB\n  Core_Types[\"<b>Core Types</b><br/>120 symbols\"]\n  style Core_Types fill:#6366F1,color:#fff,stroke:#6366F180,stroke-width:2px\n  String[\"<b>String</b><br/>45 symbols\"]\n  style String fill:#EC4899,color:#fff,stroke:#EC489980,stroke-width:2px\n  Number[\"<b>Number</b><br/>30 symbols\"]\n  style Number fill:#14B8A6,color:#fff,stroke:#14B8A680,stroke-width:2px\n  Object[\"<b>Object</b><br/>55 symbols\"]\n  style Object fill:#F59E0B,color:#fff,stroke:#F59E0B80,stroke-width:2px\n  Array[\"<b>Array</b><br/>25 symbols\"]\n  style Array fill:#10B981,color:#fff,stroke:#10B98180,stroke-width:2px\n  Union_Enum[\"<b>Union / Enum</b><br/>35 symbols\"]\n  style Union_Enum fill:#8B5CF6,color:#fff,stroke:#8B5CF680,stroke-width:2px\n  Effects[\"<b>Effects</b><br/>20 symbols\"]\n  style Effects fill:#06B6D4,color:#fff,stroke:#06B6D480,stroke-width:2px\n  Error_Handling[\"<b>Error Handling</b><br/>28 symbols\"]\n  style Error_Handling fill:#EF4444,color:#fff,stroke:#EF444480,stroke-width:2px\n  Coercion[\"<b>Coercion</b><br/>15 symbols\"]\n  style Coercion fill:#A78BFA,color:#fff,stroke:#A78BFA80,stroke-width:2px\n\n  Core_Types -->|18| String\n  Core_Types -->|15| Number\n  Core_Types -->|22| Object\n  Core_Types -->|12| Array\n  Core_Types -->|14| Union_Enum\n  Core_Types -->|20| Error_Handling\n  Object -->|8| String\n  Object -->|6| Number\n  Object -->|7| Array\n  Effects -->|10| Core_Types\n  Effects -->|5| Error_Handling\n  Coercion -->|8| Core_Types\n  Coercion -->|4| String\n  Union_Enum -->|6| Error_Handling\n"
+}

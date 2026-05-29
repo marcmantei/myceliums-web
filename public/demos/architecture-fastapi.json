@@ -1,0 +1,161 @@
+{
+  "services": [
+    {
+      "id": "app",
+      "label": "Application",
+      "member_count": 85,
+      "top_symbols": [
+        "FastAPI",
+        "APIRouter",
+        "include_router"
+      ]
+    },
+    {
+      "id": "routing",
+      "label": "Routing",
+      "member_count": 60,
+      "top_symbols": [
+        "APIRoute",
+        "get",
+        "post"
+      ]
+    },
+    {
+      "id": "deps",
+      "label": "Dependencies",
+      "member_count": 45,
+      "top_symbols": [
+        "Depends",
+        "Security",
+        "get_db"
+      ]
+    },
+    {
+      "id": "params",
+      "label": "Parameters",
+      "member_count": 50,
+      "top_symbols": [
+        "Query",
+        "Path",
+        "Body"
+      ]
+    },
+    {
+      "id": "models",
+      "label": "Models",
+      "member_count": 70,
+      "top_symbols": [
+        "BaseModel",
+        "Field",
+        "validator"
+      ]
+    },
+    {
+      "id": "security",
+      "label": "Security",
+      "member_count": 30,
+      "top_symbols": [
+        "OAuth2",
+        "HTTPBearer",
+        "APIKey"
+      ]
+    },
+    {
+      "id": "middleware",
+      "label": "Middleware",
+      "member_count": 25,
+      "top_symbols": [
+        "CORSMiddleware",
+        "GZipMiddleware"
+      ]
+    },
+    {
+      "id": "responses",
+      "label": "Responses",
+      "member_count": 35,
+      "top_symbols": [
+        "JSONResponse",
+        "HTMLResponse",
+        "StreamingResponse"
+      ]
+    },
+    {
+      "id": "openapi",
+      "label": "OpenAPI",
+      "member_count": 40,
+      "top_symbols": [
+        "get_openapi",
+        "docs",
+        "redoc"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "source": "Application",
+      "target": "Routing",
+      "count": 25
+    },
+    {
+      "source": "Application",
+      "target": "Middleware",
+      "count": 10
+    },
+    {
+      "source": "Application",
+      "target": "OpenAPI",
+      "count": 8
+    },
+    {
+      "source": "Routing",
+      "target": "Dependencies",
+      "count": 18
+    },
+    {
+      "source": "Routing",
+      "target": "Parameters",
+      "count": 20
+    },
+    {
+      "source": "Routing",
+      "target": "Responses",
+      "count": 15
+    },
+    {
+      "source": "Dependencies",
+      "target": "Security",
+      "count": 12
+    },
+    {
+      "source": "Dependencies",
+      "target": "Models",
+      "count": 8
+    },
+    {
+      "source": "Parameters",
+      "target": "Models",
+      "count": 16
+    },
+    {
+      "source": "Responses",
+      "target": "Models",
+      "count": 10
+    },
+    {
+      "source": "Security",
+      "target": "Models",
+      "count": 5
+    },
+    {
+      "source": "OpenAPI",
+      "target": "Routing",
+      "count": 6
+    },
+    {
+      "source": "OpenAPI",
+      "target": "Models",
+      "count": 12
+    }
+  ],
+  "mermaid": "graph TB\n  Application[\"<b>Application</b><br/>85 symbols\"]\n  style Application fill:#6366F1,color:#fff,stroke:#6366F180,stroke-width:2px\n  Routing[\"<b>Routing</b><br/>60 symbols\"]\n  style Routing fill:#EC4899,color:#fff,stroke:#EC489980,stroke-width:2px\n  Dependencies[\"<b>Dependencies</b><br/>45 symbols\"]\n  style Dependencies fill:#14B8A6,color:#fff,stroke:#14B8A680,stroke-width:2px\n  Parameters[\"<b>Parameters</b><br/>50 symbols\"]\n  style Parameters fill:#F59E0B,color:#fff,stroke:#F59E0B80,stroke-width:2px\n  Models[\"<b>Models</b><br/>70 symbols\"]\n  style Models fill:#10B981,color:#fff,stroke:#10B98180,stroke-width:2px\n  Security[\"<b>Security</b><br/>30 symbols\"]\n  style Security fill:#8B5CF6,color:#fff,stroke:#8B5CF680,stroke-width:2px\n  Middleware[\"<b>Middleware</b><br/>25 symbols\"]\n  style Middleware fill:#06B6D4,color:#fff,stroke:#06B6D480,stroke-width:2px\n  Responses[\"<b>Responses</b><br/>35 symbols\"]\n  style Responses fill:#EF4444,color:#fff,stroke:#EF444480,stroke-width:2px\n  OpenAPI[\"<b>OpenAPI</b><br/>40 symbols\"]\n  style OpenAPI fill:#A78BFA,color:#fff,stroke:#A78BFA80,stroke-width:2px\n\n  Application -->|25| Routing\n  Application -->|10| Middleware\n  Application -->|8| OpenAPI\n  Routing -->|18| Dependencies\n  Routing -->|20| Parameters\n  Routing -->|15| Responses\n  Dependencies -->|12| Security\n  Dependencies -->|8| Models\n  Parameters -->|16| Models\n  Responses -->|10| Models\n  Security -->|5| Models\n  OpenAPI -->|6| Routing\n  OpenAPI -->|12| Models\n"
+}

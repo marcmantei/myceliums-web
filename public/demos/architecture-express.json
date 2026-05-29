@@ -1,0 +1,146 @@
+{
+  "services": [
+    {
+      "id": "app",
+      "label": "Application Core",
+      "member_count": 41,
+      "top_symbols": [
+        "app",
+        "createApplication",
+        "init"
+      ]
+    },
+    {
+      "id": "router",
+      "label": "Router",
+      "member_count": 28,
+      "top_symbols": [
+        "Router",
+        "Route",
+        "Layer"
+      ]
+    },
+    {
+      "id": "request",
+      "label": "Request",
+      "member_count": 22,
+      "top_symbols": [
+        "req",
+        "header",
+        "accepts"
+      ]
+    },
+    {
+      "id": "response",
+      "label": "Response",
+      "member_count": 35,
+      "top_symbols": [
+        "res",
+        "send",
+        "json"
+      ]
+    },
+    {
+      "id": "middleware",
+      "label": "Middleware",
+      "member_count": 18,
+      "top_symbols": [
+        "next",
+        "use",
+        "handle"
+      ]
+    },
+    {
+      "id": "view",
+      "label": "View Engine",
+      "member_count": 12,
+      "top_symbols": [
+        "View",
+        "render",
+        "lookup"
+      ]
+    },
+    {
+      "id": "utils",
+      "label": "Utilities",
+      "member_count": 15,
+      "top_symbols": [
+        "merge",
+        "flatten",
+        "etag"
+      ]
+    },
+    {
+      "id": "static",
+      "label": "Static Files",
+      "member_count": 8,
+      "top_symbols": [
+        "serveStatic",
+        "send"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "source": "Application Core",
+      "target": "Router",
+      "count": 12
+    },
+    {
+      "source": "Application Core",
+      "target": "Middleware",
+      "count": 8
+    },
+    {
+      "source": "Application Core",
+      "target": "View Engine",
+      "count": 5
+    },
+    {
+      "source": "Router",
+      "target": "Request",
+      "count": 15
+    },
+    {
+      "source": "Router",
+      "target": "Response",
+      "count": 14
+    },
+    {
+      "source": "Router",
+      "target": "Middleware",
+      "count": 9
+    },
+    {
+      "source": "Middleware",
+      "target": "Request",
+      "count": 6
+    },
+    {
+      "source": "Middleware",
+      "target": "Response",
+      "count": 7
+    },
+    {
+      "source": "Response",
+      "target": "View Engine",
+      "count": 4
+    },
+    {
+      "source": "Response",
+      "target": "Utilities",
+      "count": 6
+    },
+    {
+      "source": "Request",
+      "target": "Utilities",
+      "count": 3
+    },
+    {
+      "source": "Static Files",
+      "target": "Response",
+      "count": 5
+    }
+  ],
+  "mermaid": "graph TB\n  Application_Core[\"<b>Application Core</b><br/>41 symbols\"]\n  style Application_Core fill:#6366F1,color:#fff,stroke:#6366F180,stroke-width:2px\n  Router[\"<b>Router</b><br/>28 symbols\"]\n  style Router fill:#EC4899,color:#fff,stroke:#EC489980,stroke-width:2px\n  Request[\"<b>Request</b><br/>22 symbols\"]\n  style Request fill:#14B8A6,color:#fff,stroke:#14B8A680,stroke-width:2px\n  Response[\"<b>Response</b><br/>35 symbols\"]\n  style Response fill:#F59E0B,color:#fff,stroke:#F59E0B80,stroke-width:2px\n  Middleware[\"<b>Middleware</b><br/>18 symbols\"]\n  style Middleware fill:#10B981,color:#fff,stroke:#10B98180,stroke-width:2px\n  View_Engine[\"<b>View Engine</b><br/>12 symbols\"]\n  style View_Engine fill:#8B5CF6,color:#fff,stroke:#8B5CF680,stroke-width:2px\n  Utilities[\"<b>Utilities</b><br/>15 symbols\"]\n  style Utilities fill:#06B6D4,color:#fff,stroke:#06B6D480,stroke-width:2px\n  Static_Files[\"<b>Static Files</b><br/>8 symbols\"]\n  style Static_Files fill:#EF4444,color:#fff,stroke:#EF444480,stroke-width:2px\n\n  Application_Core -->|12| Router\n  Application_Core -->|8| Middleware\n  Application_Core -->|5| View_Engine\n  Router -->|15| Request\n  Router -->|14| Response\n  Router -->|9| Middleware\n  Middleware -->|6| Request\n  Middleware -->|7| Response\n  Response -->|4| View_Engine\n  Response -->|6| Utilities\n  Request -->|3| Utilities\n  Static_Files -->|5| Response\n"
+}

@@ -1,0 +1,83 @@
+{
+  "total_findings": 8,
+  "rules": {
+    "circular_dependency": {
+      "severity": "error",
+      "count": 1,
+      "findings": [
+        {
+          "members": [
+            "app.init",
+            "app.defaultConfiguration",
+            "app.lazyrouter"
+          ],
+          "size": 3,
+          "files": [
+            "lib/application.js"
+          ]
+        }
+      ]
+    },
+    "god_node": {
+      "severity": "warning",
+      "count": 4,
+      "findings": [
+        {
+          "name": "next",
+          "file_path": "lib/response.js",
+          "degree": 12
+        },
+        {
+          "name": "error",
+          "file_path": "examples/error/index.js",
+          "degree": 7
+        },
+        {
+          "name": "callback",
+          "file_path": "lib/response.js",
+          "degree": 7
+        },
+        {
+          "name": "createApp",
+          "file_path": "test/express.static.js",
+          "degree": 6
+        }
+      ]
+    },
+    "high_fan_out": {
+      "severity": "warning",
+      "count": 3,
+      "findings": [
+        {
+          "name": "createRedirectServerForDomain",
+          "file_path": "test/res.location.js",
+          "out_degree": 4
+        },
+        {
+          "name": "testRequestedRedirect",
+          "file_path": "test/res.location.js",
+          "out_degree": 4
+        },
+        {
+          "name": "createApp",
+          "file_path": "test/express.static.js",
+          "out_degree": 6
+        }
+      ]
+    },
+    "unstable_dependency": {
+      "severity": "info",
+      "count": 2,
+      "findings": [
+        {
+          "stable_module": "lib/response.js",
+          "unstable_module": "lib/utils.js"
+        },
+        {
+          "stable_module": "lib/request.js",
+          "unstable_module": "lib/utils.js"
+        }
+      ]
+    }
+  }
+}

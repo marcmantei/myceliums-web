@@ -1,0 +1,222 @@
+[
+  {
+    "name": "createApp",
+    "kind": "Function",
+    "file_path": "test/express.static.js",
+    "community": "createApp",
+    "score": 1.481,
+    "betweenness": 0.65,
+    "churn": 68,
+    "instability": 0.857,
+    "degree": 6
+  },
+  {
+    "name": "testRequestedRedirect",
+    "kind": "Function",
+    "file_path": "test/res.location.js",
+    "community": "dir-0",
+    "score": 0.999,
+    "betweenness": 0.537,
+    "churn": 43,
+    "instability": 0.8,
+    "degree": 4
+  },
+  {
+    "name": "View",
+    "kind": "Variable",
+    "file_path": "lib/application.js",
+    "community": "View",
+    "score": 0.943,
+    "betweenness": 0.463,
+    "churn": 63,
+    "instability": 0.75,
+    "degree": 3
+  },
+  {
+    "name": "error",
+    "kind": "Function",
+    "file_path": "examples/error/index.js",
+    "community": "dir-15",
+    "score": 0.875,
+    "betweenness": 0.694,
+    "churn": 44,
+    "instability": 0.375,
+    "degree": 7
+  },
+  {
+    "name": "createRedirectServerForDomain",
+    "kind": "Function",
+    "file_path": "test/res.location.js",
+    "community": "dir-0",
+    "score": 0.838,
+    "betweenness": 0.537,
+    "churn": 20,
+    "instability": 0.8,
+    "degree": 4
+  },
+  {
+    "name": "count",
+    "kind": "Function",
+    "file_path": "examples/view-locals/index.js",
+    "community": "app",
+    "score": 0.817,
+    "betweenness": 0.537,
+    "churn": 69,
+    "instability": 0.4,
+    "degree": 4
+  },
+  {
+    "name": "sendfile",
+    "kind": "Function",
+    "file_path": "lib/response.js",
+    "community": "dir-18",
+    "score": 0.77,
+    "betweenness": 0.367,
+    "churn": 80,
+    "instability": 0.667,
+    "degree": 2
+  },
+  {
+    "name": "users",
+    "kind": "Variable",
+    "file_path": "examples/content-negotiation/index.js",
+    "community": "users",
+    "score": 0.766,
+    "betweenness": 0.367,
+    "churn": 79,
+    "instability": 0.667,
+    "degree": 2
+  },
+  {
+    "name": "count2",
+    "kind": "Function",
+    "file_path": "examples/view-locals/index.js",
+    "community": "dir-6",
+    "score": 0.697,
+    "betweenness": 0.367,
+    "churn": 63,
+    "instability": 0.667,
+    "degree": 2
+  },
+  {
+    "name": "onReadFile",
+    "kind": "Function",
+    "file_path": "test/support/tmpl.js",
+    "community": "dir-1",
+    "score": 0.672,
+    "betweenness": 0.367,
+    "churn": 57,
+    "instability": 0.667,
+    "degree": 2
+  },
+  {
+    "name": "authenticate",
+    "kind": "Function",
+    "file_path": "examples/auth/index.js",
+    "community": "fn",
+    "score": 0.646,
+    "betweenness": 0.367,
+    "churn": 51,
+    "instability": 0.667,
+    "degree": 2
+  },
+  {
+    "name": "tryRender",
+    "kind": "Function",
+    "file_path": "lib/application.js",
+    "community": "fn",
+    "score": 0.646,
+    "betweenness": 0.367,
+    "churn": 51,
+    "instability": 0.667,
+    "degree": 2
+  },
+  {
+    "name": "restrict",
+    "kind": "Function",
+    "file_path": "examples/auth/index.js",
+    "community": "dir-5",
+    "score": 0.637,
+    "betweenness": 0.367,
+    "churn": 49,
+    "instability": 0.667,
+    "degree": 2
+  },
+  {
+    "name": "createETagGenerator",
+    "kind": "Function",
+    "file_path": "lib/utils.js",
+    "community": "from",
+    "score": 0.616,
+    "betweenness": 0.367,
+    "churn": 44,
+    "instability": 0.667,
+    "degree": 2
+  },
+  {
+    "name": "onfinish",
+    "kind": "Function",
+    "file_path": "lib/response.js",
+    "community": "callback",
+    "score": 0.613,
+    "betweenness": 0.463,
+    "churn": 6,
+    "instability": 0.75,
+    "degree": 3
+  },
+  {
+    "name": "expectKeyCount",
+    "kind": "Function",
+    "file_path": "test/express.urlencoded.js",
+    "community": "dir-0",
+    "score": 0.552,
+    "betweenness": 0.367,
+    "churn": 29,
+    "instability": 0.667,
+    "degree": 2
+  },
+  {
+    "name": "fn",
+    "kind": "Variable",
+    "file_path": "lib/view.js",
+    "community": "fn",
+    "score": 0.552,
+    "betweenness": 0.463,
+    "churn": 59,
+    "instability": 0.25,
+    "degree": 3
+  },
+  {
+    "name": "format",
+    "kind": "Function",
+    "file_path": "examples/content-negotiation/index.js",
+    "community": "format",
+    "score": 0.547,
+    "betweenness": 0.367,
+    "churn": 79,
+    "instability": 0.333,
+    "degree": 2
+  },
+  {
+    "name": "users2",
+    "kind": "Function",
+    "file_path": "examples/view-locals/index.js",
+    "community": "dir-6",
+    "score": 0.539,
+    "betweenness": 0.367,
+    "churn": 26,
+    "instability": 0.667,
+    "degree": 2
+  },
+  {
+    "name": "onaborted",
+    "kind": "Function",
+    "file_path": "lib/response.js",
+    "community": "dir-18",
+    "score": 0.529,
+    "betweenness": 0.367,
+    "churn": 73,
+    "instability": 0.333,
+    "degree": 2
+  }
+]

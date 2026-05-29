@@ -1,0 +1,91 @@
+[
+  {
+    "id": "snap-1",
+    "date": "2026-03-01",
+    "commit": "a1b2c3d",
+    "symbols": 1877,
+    "edges": 1997,
+    "communities": 129,
+    "drift_score": 100,
+    "diff": null
+  },
+  {
+    "id": "snap-2",
+    "date": "2026-03-15",
+    "commit": "e4f5g6h",
+    "symbols": 1917,
+    "edges": 2027,
+    "communities": 132,
+    "drift_score": 92,
+    "diff": {
+      "added_symbols": 40,
+      "removed_symbols": 0,
+      "added_edges": 30,
+      "removed_edges": 0
+    }
+  },
+  {
+    "id": "snap-3",
+    "date": "2026-04-01",
+    "commit": "i7j8k9l",
+    "symbols": 1967,
+    "edges": 2057,
+    "communities": 135,
+    "drift_score": 78,
+    "diff": {
+      "added_symbols": 52,
+      "removed_symbols": 2,
+      "added_edges": 35,
+      "removed_edges": 5
+    }
+  },
+  {
+    "id": "snap-4",
+    "date": "2026-04-15",
+    "commit": "m0n1o2p",
+    "symbols": 1987,
+    "edges": 2072,
+    "communities": 136,
+    "drift_score": 65,
+    "diff": {
+      "added_symbols": 25,
+      "removed_symbols": 5,
+      "added_edges": 18,
+      "removed_edges": 3
+    }
+  },
+  {
+    "id": "snap-5",
+    "date": "2026-05-01",
+    "commit": "q3r4s5t",
+    "symbols": 1997,
+    "edges": 2077,
+    "communities": 137,
+    "drift_score": 34,
+    "diff": {
+      "added_symbols": 18,
+      "removed_symbols": 8,
+      "added_edges": 22,
+      "removed_edges": 7,
+      "community_changes": [
+        {
+          "label": "router",
+          "change": "grown",
+          "old": 15,
+          "new": 28
+        },
+        {
+          "label": "middleware",
+          "change": "added",
+          "new": 12
+        },
+        {
+          "label": "utils",
+          "change": "shrunk",
+          "old": 20,
+          "new": 14
+        }
+      ]
+    }
+  }
+]
