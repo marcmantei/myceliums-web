@@ -25,7 +25,7 @@ export default function Footer() {
             <Github className="w-4 h-4" />
             GitHub
           </a>
-          <span className="text-xs text-text-secondary">AGPL-3.0 License</span>
+          <span className="text-xs text-text-secondary">Apache-2.0 License</span>
         </div>
       </div>
     </footer>

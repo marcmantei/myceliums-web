@@ -18,7 +18,7 @@ const PILLARS = [
   {
     icon: Eye,
     title: "Open Source & Auditable",
-    details: ["AGPL-3.0 licensed", "Full source on GitHub", "Community-driven development"],
+    details: ["Apache-2.0 licensed", "Full source on GitHub", "Every claim here is verifiable in the code"],
   },
   {
     icon: Server,
@@ -70,7 +70,7 @@ export default function PrivacyTrust() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block px-3 py-1 text-xs font-mono text-black font-semibold rounded-full mb-6 bg-success">
-            100% LOCAL · ZERO TELEMETRY · AGPL-3.0 LICENSE
+            100% LOCAL · ZERO TELEMETRY · Apache-2.0 LICENSE
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             Privacy by architecture, not by promise
@@ -156,7 +156,7 @@ export default function PrivacyTrust() {
         {/* Badges */}
         <div className="flex flex-wrap items-center justify-center gap-4">
           <span className="px-3 py-1.5 text-xs font-mono bg-white/[0.03] border border-white/[0.06] rounded-lg text-text-secondary">
-            AGPL-3.0 License
+            Apache-2.0 License
           </span>
           {stars !== null && (
             <span className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono bg-white/[0.03] border border-white/[0.06] rounded-lg text-text-secondary">

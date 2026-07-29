@@ -15,50 +15,32 @@ interface Feature {
   understandAnything: "yes" | "no" | "partial";
 }
 
+// Kept deliberately short. A table where one column is a solid row of
+// checkmarks tells the reader nothing except that its author wrote it — so this
+// lists the handful of things that genuinely differ, including the rows where
+// Myceliums is the one losing.
 const FEATURES: Feature[] = [
-  { name: "MCP Tools", myceliums: "yes", gitlabKg: "yes", graphify: "partial", codeReviewGraph: "yes", tokenSavior: "yes", greptile: "partial", coderabbit: "no", understandAnything: "no" },
-  { name: "Impact Detection", myceliums: "yes", gitlabKg: "partial", graphify: "no", codeReviewGraph: "yes", tokenSavior: "yes", greptile: "partial", coderabbit: "no", understandAnything: "partial" },
-  { name: "Cypher Query Engine", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Knowledge Gap Detection", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Dead Code Detection", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Process Tracing", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "partial" },
-  { name: "BM25 + Semantic + Hybrid Search", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "partial", tokenSavior: "partial", greptile: "no", coderabbit: "no", understandAnything: "partial" },
-  { name: "Community Detection", myceliums: "yes", gitlabKg: "no", graphify: "yes", codeReviewGraph: "yes", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "yes" },
-  { name: "God Node Detection", myceliums: "yes", gitlabKg: "no", graphify: "yes", codeReviewGraph: "yes", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Symbol Rename Preview", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Token-Optimized Reviews", myceliums: "yes", gitlabKg: "partial", graphify: "no", codeReviewGraph: "yes", tokenSavior: "yes", greptile: "yes", coderabbit: "yes", understandAnything: "no" },
-  { name: "Dependency Analysis", myceliums: "yes", gitlabKg: "yes", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "yes" },
-  { name: "Call Graph", myceliums: "yes", gitlabKg: "yes", graphify: "partial", codeReviewGraph: "partial", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "yes" },
-  { name: "Repo Map / API Map", myceliums: "yes", gitlabKg: "yes", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "partial" },
-  { name: "Graph Explorer / Visualization", myceliums: "yes", gitlabKg: "yes", graphify: "partial", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "yes" },
-  { name: "Email / Document Ingestion", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "partial" },
-  { name: "Cross-Repo Comparison", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Graph Diff / Change Detection", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Ontology / Schema System", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Circular Dependency Detection", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Centrality Metrics (4 types)", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Module Coupling Analysis", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "SDLC Integration (Issues, MRs, CI)", myceliums: "partial", gitlabKg: "partial", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Cross-Project Search", myceliums: "partial", gitlabKg: "partial", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Persistent Memory", myceliums: "no", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "yes", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Local-First (no cloud)", myceliums: "yes", gitlabKg: "yes", graphify: "yes", codeReviewGraph: "yes", tokenSavior: "yes", greptile: "no", coderabbit: "no", understandAnything: "yes" },
-  { name: "No LLM Required", myceliums: "yes", gitlabKg: "yes", graphify: "no", codeReviewGraph: "yes", tokenSavior: "yes", greptile: "no", coderabbit: "no", understandAnything: "no" },
-  { name: "Open Source (AGPL-3.0)", myceliums: "yes", gitlabKg: "no", graphify: "yes", codeReviewGraph: "yes", tokenSavior: "yes", greptile: "no", coderabbit: "no", understandAnything: "yes" },
-  { name: "Plugin-Based (Multiple Platforms)", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "yes" },
-];
+  // Where Myceliums is genuinely different
+  { name: "Cypher query engine (read-only)", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
+  { name: "Process / execution-flow tracing", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "partial" },
+  { name: "Impact detection before a change", myceliums: "yes", gitlabKg: "partial", graphify: "no", codeReviewGraph: "yes", tokenSavior: "yes", greptile: "partial", coderabbit: "no", understandAnything: "partial" },
+  { name: "Symbol rename preview", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
+  { name: "Architecture drift detection", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "no" },
+  { name: "BM25 + semantic + hybrid search", myceliums: "yes", gitlabKg: "no", graphify: "no", codeReviewGraph: "partial", tokenSavior: "partial", greptile: "no", coderabbit: "no", understandAnything: "partial" },
 
-const TOOL_COUNTS = [
-  { name: "Myceliums", count: 41, color: "bg-accent" },
-  { name: "GitLab KG", count: 10, color: "bg-white/20" },
-  { name: "Token Savior", count: 90, color: "bg-white/20" },
-  { name: "code-review-graph", count: 28, color: "bg-white/20" },
-  { name: "Graphify", count: 4, color: "bg-white/20" },
-  { name: "Greptile", count: 10, color: "bg-white/20" },
-  { name: "CodeRabbit", count: 0, color: "bg-white/20" },
-  { name: "Understand-Anything", count: 8, color: "bg-white/20" },
-];
+  // Table stakes in this category — most tools have these
+  { name: "MCP server", myceliums: "yes", gitlabKg: "yes", graphify: "yes", codeReviewGraph: "yes", tokenSavior: "yes", greptile: "partial", coderabbit: "no", understandAnything: "no" },
+  { name: "Local-first (no cloud)", myceliums: "yes", gitlabKg: "yes", graphify: "yes", codeReviewGraph: "yes", tokenSavior: "yes", greptile: "no", coderabbit: "no", understandAnything: "yes" },
+  { name: "Indexes without an LLM", myceliums: "yes", gitlabKg: "yes", graphify: "yes", codeReviewGraph: "yes", tokenSavior: "yes", greptile: "no", coderabbit: "no", understandAnything: "no" },
+  { name: "Community / god-node detection", myceliums: "yes", gitlabKg: "no", graphify: "yes", codeReviewGraph: "yes", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "yes" },
 
-const MAX_TOOLS = 90;
+  // Where Myceliums loses
+  { name: "Ingests docs, configs, SQL schemas", myceliums: "partial", gitlabKg: "no", graphify: "yes", codeReviewGraph: "no", tokenSavior: "no", greptile: "no", coderabbit: "no", understandAnything: "partial" },
+  { name: "Automated PR review in CI", myceliums: "no", gitlabKg: "partial", graphify: "partial", codeReviewGraph: "yes", tokenSavior: "no", greptile: "yes", coderabbit: "yes", understandAnything: "no" },
+  { name: "Persistent cross-session memory", myceliums: "no", gitlabKg: "no", graphify: "no", codeReviewGraph: "no", tokenSavior: "yes", greptile: "no", coderabbit: "no", understandAnything: "no" },
+  { name: "Proven at scale / large user base", myceliums: "no", gitlabKg: "yes", graphify: "yes", codeReviewGraph: "yes", tokenSavior: "partial", greptile: "yes", coderabbit: "yes", understandAnything: "yes" },
+  { name: "Commercial support / SLA", myceliums: "no", gitlabKg: "yes", graphify: "partial", codeReviewGraph: "no", tokenSavior: "no", greptile: "yes", coderabbit: "yes", understandAnything: "no" },
+];
 
 function StatusIcon({ status }: { status: "yes" | "no" | "partial" }) {
   if (status === "yes") return <Check className="w-4 h-4 text-emerald-400" />;
@@ -75,7 +57,10 @@ export default function CompetitorComparison() {
             How Myceliums compares
           </h2>
           <p className="text-lg text-white/50 max-w-2xl mx-auto text-balance">
-            Feature-for-feature comparison against every code knowledge graph tool. No marketing fluff.
+            Code knowledge graphs got crowded fast, and several of the
+            alternatives below are far more established than this one. Here is
+            where Myceliums actually differs — and where you should pick
+            something else.
           </p>
         </div>
 
@@ -175,7 +160,7 @@ export default function CompetitorComparison() {
                 <td className="p-3 sm:p-4 text-center text-white/60">Free</td>
                 <td className="p-3 sm:p-4 text-center text-white/60">Free</td>
                 <td className="p-3 sm:p-4 text-center text-white/60">Free*</td>
-                <td className="p-3 sm:p-4 text-center text-white/60">$30/seat</td>
+                <td className="p-3 sm:p-4 text-center text-white/60">$30/seat*</td>
                 <td className="p-3 sm:p-4 text-center text-white/60">$24/user</td>
               </tr>
               <tr>
@@ -195,8 +180,31 @@ export default function CompetitorComparison() {
           </table>
         </div>
 
-        <p className="text-xs text-white/30 mt-4 text-center">
-          * GitLab KG requires GitLab instance (free tier available). Graphify enterprise pricing not public. Understand-Anything requires a host IDE with LLM (MIT license). Data as of May 2026.
+        <div className="mt-6 rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 sm:p-5" data-animate>
+          <p className="text-sm text-white/60 leading-relaxed">
+            <span className="text-white/80 font-medium">Pick something else if:</span>{" "}
+            you want the most-adopted option with the largest community — Graphify
+            and Understand-Anything are both far ahead there. If you need code
+            review posted into your PRs with a support contract behind it,
+            Greptile or CodeRabbit are products; this is a tool. And if your pain
+            is scattered documentation rather than code structure, Graphify
+            handles non-code sources better today.
+          </p>
+        </div>
+
+        <p className="text-xs text-white/30 mt-4 text-center max-w-3xl mx-auto">
+          Compiled from public documentation and repositories, July 2026.
+          Competitors ship quickly and this will go stale — if a row is wrong,
+          please{" "}
+          <a
+            href="https://github.com/marcmantei/myceliums/issues/new"
+            className="underline hover:text-white/50"
+          >
+            open an issue
+          </a>{" "}
+          and it gets corrected. * GitLab KG requires a GitLab instance (free
+          tier available). Graphify&apos;s enterprise tier is early access with no
+          public pricing. Greptile is $30/seat plus $1 per review beyond 50.
         </p>
       </div>
     </SectionWrapper>

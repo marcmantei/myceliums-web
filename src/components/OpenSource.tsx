@@ -12,7 +12,7 @@ const fadeUp = {
 const points = [
   {
     icon: KeyRound,
-    title: "AGPL-3.0 License",
+    title: "Apache-2.0 License",
     description:
       "Fully open source. Fork it, modify it, contribute back to the community.",
   },
@@ -50,7 +50,7 @@ export default function OpenSource() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-text-secondary max-w-xl mx-auto mb-12"
         >
-          Myceliums is AGPL-3.0 licensed. Your code stays on your machine. The tool
+          Myceliums is Apache-2.0 licensed. Your code stays on your machine. The tool
           stays in your control.
         </motion.p>
 

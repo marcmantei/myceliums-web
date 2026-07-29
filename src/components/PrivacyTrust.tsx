@@ -40,7 +40,7 @@ const pillars: Pillar[] = [
     icon: FileCode2,
     title: "Open-Source & Auditable",
     description:
-      "AGPL-3.0 licensed. Don't trust our claims? Read the code and verify them yourself.",
+      "Apache-2.0 licensed. Don't trust our claims? Read the code and verify them yourself.",
     details: [
       "Full source on GitHub, every line",
       "No obfuscated binaries or black boxes",
