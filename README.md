@@ -35,8 +35,10 @@ To reproduce a production build the way CI does:
 npm run build          # static export into out/
 ```
 
-`NEXT_PUBLIC_BASE_PATH` sets the `basePath`. It stays unset locally and for the
-custom domain; CI sets it when the site is served from a project subpath.
+`public/CNAME` decides the `basePath`. While it exists the site is served from
+the root of the custom domain and `basePath` is forced empty. Remove it and the
+site falls back to a project site under `/myceliums-web`, where CI supplies the
+prefix via `NEXT_PUBLIC_BASE_PATH`. Neither path affects `next dev`.
 
 ## Deployment
 
