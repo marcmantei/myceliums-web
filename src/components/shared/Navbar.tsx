@@ -37,9 +37,9 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5">
-          <img src="/logo.svg" alt="myceliums.ai" className="w-9 h-9" />
+          <img src="/logo.svg" alt="Myceliums" className="w-9 h-9" />
           <span className="text-xl font-bold text-foreground tracking-tight">
-            <span className="text-accent">my</span>celiums<span className="text-text-tertiary">.ai</span>
+            <span className="text-accent">my</span>celiums
           </span>
         </a>
 
