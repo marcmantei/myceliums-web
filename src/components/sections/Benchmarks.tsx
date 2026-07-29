@@ -1,27 +1,14 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Star } from "lucide-react";
 import AnimatedCounter from "@/components/ui/animated-counter";
-import RadialGauge from "@/components/charts/RadialGauge";
 import GlassCard from "@/components/ui/glass-card";
 
 gsap.registerPlugin(ScrollTrigger);
-
-interface BenchmarkData {
-  time_reduction_pct: number;
-  cost_reduction_pct: number;
-  tool_call_reduction_pct: number;
-}
-
-const DEFAULT_METRICS: BenchmarkData = {
-  time_reduction_pct: 89,
-  cost_reduction_pct: 87,
-  tool_call_reduction_pct: 80,
-};
 
 const LANG_COLORS: Record<string, { bg: string; text: string }> = {
   Python: { bg: "rgba(59,130,246,0.15)", text: "#3B82F6" },
@@ -105,7 +92,7 @@ function RepoCard({ repo }: { repo: RepoResult }) {
         {/* Timing */}
         <div className="grid grid-cols-2 gap-2 mb-4 text-center">
           <div className="rounded-lg py-1.5" style={{ backgroundColor: "rgba(255,255,255,0.03)" }}>
-            <div className="text-xs font-mono font-semibold">{repo.firstRun}*</div>
+            <div className="text-xs font-mono font-semibold">{repo.firstRun}</div>
             <div className="text-[11px] text-text-tertiary uppercase">First run</div>
           </div>
           <div className="rounded-lg py-1.5" style={{ backgroundColor: "rgba(16,185,129,0.08)" }}>
@@ -146,24 +133,8 @@ function RepoCard({ repo }: { repo: RepoResult }) {
   );
 }
 
-function useBenchmarkData() {
-  const [data, setData] = useState<BenchmarkData>(DEFAULT_METRICS);
-
-  useEffect(() => {
-    fetch("https://raw.githubusercontent.com/marcmantei/myceliums/main/benchmarks/latest.json")
-      .then((r) => r.json())
-      .then((d) => {
-        if (d.time_reduction_pct) setData(d);
-      })
-      .catch(() => {});
-  }, []);
-
-  return data;
-}
-
 export default function Benchmarks() {
   const sectionRef = useRef<HTMLElement>(null);
-  const metrics = useBenchmarkData();
 
   useGSAP(
     () => {
@@ -213,7 +184,8 @@ export default function Benchmarks() {
             Does it actually work on real codebases at scale?
           </p>
           <h3 className="text-xl md:text-2xl font-semibold text-accent leading-snug">
-            Tested on 6 popular open-source repositories across 6 languages. Every number is reproducible.
+            Tested on 6 popular open-source repositories across 6 languages. The
+            raw data is in the repo — check it.
           </h3>
         </div>
 
@@ -240,34 +212,6 @@ export default function Benchmarks() {
           ))}
         </div>
 
-        {/* Radial gauges */}
-        <GlassCard className="p-6 lg:p-8 mb-8" data-animate>
-          <h3 className="text-lg font-semibold mb-6 text-center">AI Agent Efficiency Gains</h3>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="relative flex justify-center">
-              <RadialGauge
-                value={metrics.time_reduction_pct}
-                label="Faster responses"
-                color="#6366F1"
-              />
-            </div>
-            <div className="relative flex justify-center">
-              <RadialGauge
-                value={metrics.cost_reduction_pct}
-                label="Fewer context bytes"
-                color="#10B981"
-              />
-            </div>
-            <div className="relative flex justify-center">
-              <RadialGauge
-                value={metrics.tool_call_reduction_pct}
-                label="Fewer tool calls"
-                color="#F59E0B"
-              />
-            </div>
-          </div>
-        </GlassCard>
-
         {/* Source link + footnote */}
         <div className="text-center mt-8 space-y-2" data-animate>
           <a
@@ -278,8 +222,13 @@ export default function Benchmarks() {
           >
             Methodology & raw data on GitHub →
           </a>
-          <p className="text-xs text-text-tertiary">
-            * First run includes embedding generation. Updates only re-analyze changed files. Measured on Apple M1 Pro.
+          <p className="text-xs text-text-tertiary mx-auto max-w-3xl">
+            File, symbol and relationship counts and the token and call reductions
+            come from the published benchmark data linked above. The run times are
+            indicative estimates from development runs on an Apple M1 Pro — they
+            are not part of that dataset and will vary with hardware, embedding
+            model, and repository. First run includes embedding generation; updates
+            only re-analyze changed files.
           </p>
         </div>
       </div>

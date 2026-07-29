@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, Eye, KeyRound, ShieldCheck, Users } from "lucide-react";
+import { LICENSE_LABEL, LICENSE_SPDX_ID } from "@/data/license";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -12,7 +13,7 @@ const fadeUp = {
 const points = [
   {
     icon: KeyRound,
-    title: "AGPL-3.0 License",
+    title: LICENSE_LABEL,
     description:
       "Fully open source. Fork it, modify it, contribute back to the community.",
   },
@@ -50,7 +51,7 @@ export default function OpenSource() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-text-secondary max-w-xl mx-auto mb-12"
         >
-          Myceliums is AGPL-3.0 licensed. Your code stays on your machine. The tool
+          Myceliums is {LICENSE_SPDX_ID} licensed. Your code stays on your machine. The tool
           stays in your control.
         </motion.p>
 

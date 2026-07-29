@@ -1,6 +1,7 @@
 "use client";
 
 import { Github } from "lucide-react";
+import { LICENSE_LABEL, LICENSE_SPDX_ID } from "@/data/license";
 
 export default function Footer() {
   return (
@@ -28,7 +29,7 @@ export default function Footer() {
             <Github className="w-4 h-4" />
             GitHub
           </a>
-          <span className="text-xs text-text-tertiary">AGPL-3.0 License</span>
+          <span className="text-xs text-text-tertiary">{LICENSE_LABEL}</span>
         </div>
       </div>
     </footer>

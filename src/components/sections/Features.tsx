@@ -39,7 +39,7 @@ interface FeatureConfig {
 const FEATURES: FeatureConfig[] = [
   {
     title: "Knowledge Graph",
-    description: "Parses 20+ languages into a structured graph of symbols, relationships, and call chains.",
+    description: "Parses 23 languages into a structured graph of symbols, relationships, and call chains.",
     icon: Network,
     animation: KnowledgeGraphCard,
     size: "large",
@@ -82,7 +82,7 @@ const FEATURES: FeatureConfig[] = [
   },
   {
     title: "MCP Integration",
-    description: "41 tools for AI agents across 12 platforms. Claude Code, Cursor, Copilot, Gemini, and more via Model Context Protocol.",
+    description: "54 tools for AI agents, with one-command setup for 11 editors and agents. Claude Code, Cursor, Copilot, Gemini, and more via Model Context Protocol.",
     icon: Plug,
     animation: MCPIntegrationCard,
     size: "medium",

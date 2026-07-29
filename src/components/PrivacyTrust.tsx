@@ -10,6 +10,7 @@ import {
   Github,
 } from "lucide-react";
 import { type LucideIcon } from "lucide-react";
+import { LICENSE_LABEL, LICENSE_SPDX_ID } from "@/data/license";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -40,7 +41,7 @@ const pillars: Pillar[] = [
     icon: FileCode2,
     title: "Open-Source & Auditable",
     description:
-      "AGPL-3.0 licensed. Don't trust our claims? Read the code and verify them yourself.",
+      `${LICENSE_SPDX_ID} licensed. Don't trust our claims? Read the code and verify them yourself.`,
     details: [
       "Full source on GitHub, every line",
       "No obfuscated binaries or black boxes",
