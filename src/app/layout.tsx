@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import GSAPProvider from "@/components/providers/GSAPProvider";
 import { ViewModeProvider } from "@/components/providers/ViewModeProvider";
+import { siteUrl } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -20,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://myceliums.ai"),
+  metadataBase: new URL(siteUrl),
   title: "Myceliums: Code Intelligence Infrastructure for AI Agents",
   description:
     "Understand any codebase in minutes. Myceliums builds a knowledge graph from code, documents, and notebooks across 23 languages with impact detection, architectural intelligence, and 54 AI agent tools.",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     title: "Myceliums: Code Intelligence Infrastructure for AI Agents",
     description:
       "AI agents that actually understand your architecture. Impact detection, call graphs, 23 languages. Open source.",
-    url: "https://myceliums.ai",
+    url: siteUrl,
     siteName: "Myceliums",
     type: "website",
     images: [
