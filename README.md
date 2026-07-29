@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# myceliums-web
 
-## Getting Started
+Marketing site for [Myceliums](https://github.com/marcmantei/myceliums) — a code
+knowledge graph that gives AI agents structural understanding of a codebase.
 
-First, run the development server:
+Live at **[myceliums.marcmantei.com](https://myceliums.marcmantei.com)**.
+
+## Stack
+
+- **Next.js 16** (App Router) with `output: "export"` — fully static, no server
+  runtime
+- **React 19**, **Tailwind CSS 4**
+- **Three.js** / react-three-fiber for the 3D graph views, **@xyflow/react** and
+  **d3** for the 2D ones
+- **GSAP** and **Framer Motion** for scroll and transition work
+- **asciinema-player** for the terminal recordings
+
+The graphs under `public/graphs/` are real Myceliums output, not mock data — each
+carries the analyzer's own metadata block (`express.json`, for instance, records
+1997 symbols and 2077 relationships across 137 communities). The demo files in
+`public/demos/` are derived from them by `scripts/generate-demo-data.mjs`.
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To reproduce a production build the way CI does:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build          # static export into out/
+```
 
-## Learn More
+`NEXT_PUBLIC_BASE_PATH` sets the `basePath`. It stays unset locally and for the
+custom domain; CI sets it when the site is served from a project subpath.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Pushing to `main` builds the static export and publishes it to GitHub Pages via
+`.github/workflows/deploy-website.yml`. No secrets or hosting credentials are
+involved. The custom domain is pinned by `public/CNAME`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Apache-2.0, matching the main project.
