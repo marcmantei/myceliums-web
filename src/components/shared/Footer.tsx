@@ -9,9 +9,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-4">
         <div className="flex items-center gap-2.5">
-            <img src="/logo.svg" alt="myceliums.ai" className="w-8 h-8" />
+            <img src="/logo.svg" alt="Myceliums" className="w-8 h-8" />
             <span className="text-base font-semibold text-foreground">
-              <span className="text-accent">my</span>celiums<span className="text-text-tertiary">.ai</span>
+              <span className="text-accent">my</span>celiums
             </span>
           </div>
           <span className="text-xs text-text-tertiary">
