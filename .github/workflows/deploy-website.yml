@@ -5,12 +5,27 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Required by actions/deploy-pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it mid-upload.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     name: Build Website
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+        id: pages
 
       - uses: actions/setup-node@v4
         with:
@@ -18,31 +33,29 @@ jobs:
           cache: 'npm'
 
       - run: npm ci
-      - run: npm run build
 
-      - uses: actions/upload-artifact@v4
+      # A project site is served from /<repo>, so the static export needs a
+      # matching basePath. configure-pages reports the real base_path, which is
+      # empty once a custom domain is attached — so this keeps working either way.
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+
+      # Next writes assets under _next/, which Jekyll would strip on Pages.
+      - run: touch out/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
         with:
-          name: website-build
           path: out/
-          if-no-files-found: warn
 
   deploy:
-    name: Deploy via FTP
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: website-build
-          path: website-build/
-
-      - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: website-build/
-          server-dir: ${{ secrets.FTP_SERVER_DIR || '/' }}
-          dangerous-clean-slate: false
+      - uses: actions/deploy-pages@v4
+        id: deployment
