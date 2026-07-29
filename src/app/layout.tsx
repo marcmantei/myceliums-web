@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://myceliums.ai"),
   title: "Myceliums: Code Intelligence Infrastructure for AI Agents",
   description:
-    "Understand any codebase in minutes. Myceliums builds a knowledge graph from code, documents, and notebooks across 20+ languages with impact detection, architectural intelligence, and 27 AI agent tools.",
+    "Understand any codebase in minutes. Myceliums builds a knowledge graph from code, documents, and notebooks across 23 languages with impact detection, architectural intelligence, and 54 AI agent tools.",
   keywords: [
     "code intelligence",
     "code knowledge graph",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Myceliums: Code Intelligence Infrastructure for AI Agents",
     description:
-      "AI agents that actually understand your architecture. Impact detection, call graphs, 20+ languages. Open source.",
+      "AI agents that actually understand your architecture. Impact detection, call graphs, 23 languages. Open source.",
     url: "https://myceliums.ai",
     siteName: "Myceliums",
     type: "website",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Myceliums: Code Intelligence Infrastructure for AI Agents",
     description:
-      "AI agents that actually understand your architecture. Impact detection, call graphs, 20+ languages. Open source.",
+      "AI agents that actually understand your architecture. Impact detection, call graphs, 23 languages. Open source.",
     images: ["/og-image.png"],
   },
 };

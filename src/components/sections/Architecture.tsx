@@ -13,14 +13,14 @@ import GlassCard from "@/components/ui/glass-card";
 gsap.registerPlugin(ScrollTrigger);
 
 const PIPELINE = [
-  { icon: FileCode, label: "Source Files", tech: "20+ languages", detail: "Your codebase" },
+  { icon: FileCode, label: "Source Files", tech: "23 languages", detail: "Your codebase" },
   { icon: TreeDeciduous, label: "tree-sitter", tech: "Parser", detail: "AST extraction" },
   { icon: Database, label: "Symbol Store", tech: "LanceDB", detail: "Vectors + metadata" },
   { icon: Network, label: "Graph Build", tech: "Relationships", detail: "Calls, imports, members" },
   { icon: BarChart3, label: "Communities", tech: "Leiden", detail: "Architecture clusters" },
   { icon: Search, label: "Search Index", tech: "BM25 + Vectors", detail: "Hybrid retrieval" },
   { icon: Cpu, label: "Process Trace", tech: "Entry→Exit", detail: "Execution flows" },
-  { icon: Bot, label: "AI Agents", tech: "MCP / CLI", detail: "41 tools exposed" },
+  { icon: Bot, label: "AI Agents", tech: "MCP / CLI", detail: "54 tools exposed" },
 ];
 
 const CRATES = [

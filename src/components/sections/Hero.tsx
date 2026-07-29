@@ -23,7 +23,7 @@ function useCanShow3D() {
 
 const CLI_LINES = [
   { type: "input" as const, text: "$ myc analyze ." },
-  { type: "output" as const, text: "Parsing 5,247 files across 20+ languages..." },
+  { type: "output" as const, text: "Parsing 5,247 files across 23 languages..." },
   { type: "output" as const, text: "Building knowledge graph..." },
   { type: "stats" as const, text: "Symbols:       41,952" },
   { type: "stats" as const, text: "Relationships: 45,028" },
@@ -231,7 +231,7 @@ export default function Hero() {
 
             {/* Stats strip */}
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-text-secondary font-mono">
-              <span><strong className="text-white">41</strong> MCP Tools</span>
+              <span><strong className="text-white">54</strong> MCP Tools</span>
               <span className="text-white/20">&middot;</span>
               <span><strong className="text-white">23</strong> Languages</span>
               <span className="text-white/20">&middot;</span>
