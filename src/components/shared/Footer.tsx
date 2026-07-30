@@ -1,7 +1,7 @@
 "use client";
 
 import { Github } from "lucide-react";
-import { LICENSE_LABEL, LICENSE_SPDX_ID } from "@/data/license";
+import { LICENSE_LABEL } from "@/data/license";
 
 export default function Footer() {
   return (
