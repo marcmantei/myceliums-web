@@ -5,7 +5,6 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Star } from "lucide-react";
-import AnimatedCounter from "@/components/ui/animated-counter";
 import GlassCard from "@/components/ui/glass-card";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,19 +25,17 @@ interface RepoResult {
   files: number;
   symbols: number;
   relationships: number;
-  tokenReduction: number;
-  callReduction: number;
   firstRun: string;
   incremental: string;
 }
 
 const REPOS: RepoResult[] = [
-  { name: "django", language: "Python", stars: "82k", url: "https://github.com/django/django", files: 6492, symbols: 38210, relationships: 52417, tokenReduction: 99.8, callReduction: 94.8, firstRun: "~90m", incremental: "35.7s" },
-  { name: "fastapi", language: "Python", stars: "82k", url: "https://github.com/fastapi/fastapi", files: 1118, symbols: 5330, relationships: 8089, tokenReduction: 99.7, callReduction: 92.8, firstRun: "9m", incremental: "0.9s" },
-  { name: "zod", language: "TypeScript", stars: "35k", url: "https://github.com/colinhacks/zod", files: 361, symbols: 7327, relationships: 8403, tokenReduction: 99.9, callReduction: 94.7, firstRun: "11m", incremental: "0.8s" },
-  { name: "express", language: "JavaScript", stars: "66k", url: "https://github.com/expressjs/express", files: 498, symbols: 2841, relationships: 3672, tokenReduction: 99.8, callReduction: 93.4, firstRun: "4.5m", incremental: "0.2s" },
-  { name: "gin", language: "Go", stars: "80k", url: "https://github.com/gin-gonic/gin", files: 312, symbols: 1847, relationships: 2518, tokenReduction: 99.6, callReduction: 93.7, firstRun: "~3m", incremental: "0.1s" },
-  { name: "tokio", language: "Rust", stars: "28k", url: "https://github.com/tokio-rs/tokio", files: 1024, symbols: 8493, relationships: 11247, tokenReduction: 99.7, callReduction: 94.7, firstRun: "24m", incremental: "0.3s" },
+  { name: "django", language: "Python", stars: "82k", url: "https://github.com/django/django", files: 6492, symbols: 38210, relationships: 52417, firstRun: "~90m", incremental: "35.7s" },
+  { name: "fastapi", language: "Python", stars: "82k", url: "https://github.com/fastapi/fastapi", files: 1118, symbols: 5330, relationships: 8089, firstRun: "9m", incremental: "0.9s" },
+  { name: "zod", language: "TypeScript", stars: "35k", url: "https://github.com/colinhacks/zod", files: 361, symbols: 7327, relationships: 8403, firstRun: "11m", incremental: "0.8s" },
+  { name: "express", language: "JavaScript", stars: "66k", url: "https://github.com/expressjs/express", files: 498, symbols: 2841, relationships: 3672, firstRun: "4.5m", incremental: "0.2s" },
+  { name: "gin", language: "Go", stars: "80k", url: "https://github.com/gin-gonic/gin", files: 312, symbols: 1847, relationships: 2518, firstRun: "~3m", incremental: "0.1s" },
+  { name: "tokio", language: "Rust", stars: "28k", url: "https://github.com/tokio-rs/tokio", files: 1024, symbols: 8493, relationships: 11247, firstRun: "24m", incremental: "0.3s" },
 ];
 
 function RepoCard({ repo }: { repo: RepoResult }) {
@@ -90,7 +87,7 @@ function RepoCard({ repo }: { repo: RepoResult }) {
         </div>
 
         {/* Timing */}
-        <div className="grid grid-cols-2 gap-2 mb-4 text-center">
+        <div className="grid grid-cols-2 gap-2 mt-auto text-center">
           <div className="rounded-lg py-1.5" style={{ backgroundColor: "rgba(255,255,255,0.03)" }}>
             <div className="text-xs font-mono font-semibold">{repo.firstRun}</div>
             <div className="text-[11px] text-text-tertiary uppercase">First run</div>
@@ -98,34 +95,6 @@ function RepoCard({ repo }: { repo: RepoResult }) {
           <div className="rounded-lg py-1.5" style={{ backgroundColor: "rgba(16,185,129,0.08)" }}>
             <div className="text-xs font-mono font-semibold" style={{ color: "#10B981" }}>{repo.incremental}</div>
             <div className="text-[11px] text-text-tertiary uppercase">Updates</div>
-          </div>
-        </div>
-
-        {/* Reductions */}
-        <div className="mt-auto space-y-2">
-          <div className="flex items-center justify-between">
-            <span className="text-xs text-text-secondary">Token reduction</span>
-            <span className="text-xs font-mono font-semibold" style={{ color: "#10B981" }}>
-              {repo.tokenReduction}%
-            </span>
-          </div>
-          <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.04)" }}>
-            <div
-              className="h-full rounded-full"
-              style={{ width: `${repo.tokenReduction}%`, backgroundColor: "rgba(16,185,129,0.6)" }}
-            />
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="text-xs text-text-secondary">Call reduction</span>
-            <span className="text-xs font-mono font-semibold" style={{ color: "#6366F1" }}>
-              {repo.callReduction}%
-            </span>
-          </div>
-          <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.04)" }}>
-            <div
-              className="h-full rounded-full"
-              style={{ width: `${repo.callReduction}%`, backgroundColor: "rgba(99,102,241,0.6)" }}
-            />
           </div>
         </div>
       </div>
@@ -184,24 +153,21 @@ export default function Benchmarks() {
             Does it actually work on real codebases at scale?
           </p>
           <h3 className="text-xl md:text-2xl font-semibold text-accent leading-snug">
-            Tested on 6 popular open-source repositories across 6 languages. The
-            raw data is in the repo — check it.
+            Six popular open-source repositories across five languages. The raw
+            data is in the repo — check it.
           </h3>
         </div>
 
-        {/* Aggregate stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16" data-animate>
+        {/* Why there is no token-saving figure */}
+        <div className="mb-16" data-animate>
           <GlassCard className="p-6">
-            <AnimatedCounter value={99.8} suffix="%" decimals={1} label="Avg Token Reduction" />
-          </GlassCard>
-          <GlassCard className="p-6">
-            <AnimatedCounter value={94.1} suffix="%" decimals={1} label="Avg Call Reduction" />
-          </GlassCard>
-          <GlassCard className="p-6">
-            <AnimatedCounter value={6} label="Repos Tested" />
-          </GlassCard>
-          <GlassCard className="p-6">
-            <AnimatedCounter value={34} label="Queries Validated" />
+            <p className="text-sm text-text-secondary max-w-3xl">
+              No token-saving figure here, on purpose. The benchmark script
+              compares the output size of a scripted find + grep + file-read
+              baseline with a single myc command. No agent is in the loop and
+              nothing checks that both return an equivalent answer, so that ratio
+              is not a measured saving.
+            </p>
           </GlassCard>
         </div>
 
@@ -223,8 +189,10 @@ export default function Benchmarks() {
             Methodology & raw data on GitHub →
           </a>
           <p className="text-xs text-text-tertiary mx-auto max-w-3xl">
-            File, symbol and relationship counts and the token and call reductions
-            come from the published benchmark data linked above. The run times are
+            File, symbol and relationship counts come from the published benchmark
+            data linked above. There is no evidence that the benchmark script ran
+            for django, express, gin and tokio, so treat their counts as
+            unconfirmed until they are re-run. The run times are
             indicative estimates from development runs on an Apple M1 Pro — they
             are not part of that dataset and will vary with hardware, embedding
             model, and repository. First run includes embedding generation; updates

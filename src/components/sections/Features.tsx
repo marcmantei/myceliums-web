@@ -96,7 +96,7 @@ const FEATURES: FeatureConfig[] = [
   },
   {
     title: "Token-Optimized",
-    description: "5-20x fewer tokens for code review. Structural summaries instead of full files.",
+    description: "Structural summaries instead of full files for code review: changed signatures, callers and callees.",
     icon: Zap,
     animation: TokenOptimizedCard,
     size: "small",

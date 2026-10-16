@@ -35,7 +35,7 @@ const USE_CASES = [
     icon: GitPullRequest,
     title: "AI-Powered Code Review",
     description:
-      "Token-optimized context gives AI agents structured understanding instead of raw files. 50x fewer tokens, better reviews.",
+      "Token-optimized context gives AI agents structural summaries of a diff (changed signatures, callers, callees) instead of raw files.",
     command: "myc review --diff HEAD~1",
   },
   {

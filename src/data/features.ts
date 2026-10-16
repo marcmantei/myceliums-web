@@ -387,23 +387,11 @@ export const HERO_FEATURES: HeroFeature[] = [
     painPoint: "Why do AI agents make 100+ blind grep calls when they could understand your entire codebase?",
     tagline: "Give your AI agent real intelligence. Structured tools plus deep semantic context from the knowledge graph.",
     shortDescription: "Myceliums analyzes your codebase, builds a semantic knowledge graph, and exposes it to Claude, Cursor, and Windsurf via MCP. Your agent doesn't just get tools, it gets understanding: every symbol, relationship, and dependency, ready to reason about.",
-    metrics: [
-      {
-        label: "Tool calls reduced",
-        value: "~80%",
-        improvement: "15+ grep calls → 3 KG queries *",
-      },
-      {
-        label: "Context size reduced",
-        value: "~99%",
-        improvement: "50K tokens → 500 tokens per query *",
-      },
-      {
-        label: "Complete results",
-        value: "100%",
-        improvement: "full call chain, no missed callers *",
-      },
-    ],
+    // No metric cards: the three figures that stood here ("~80%" fewer tool
+    // calls, "~99%" smaller context, "100%" complete results) were footnoted as
+    // measured on the six-repo benchmark. That benchmark compares output size,
+    // with no agent in the loop and no check that the answers match.
+    metrics: [],
     beforeDemo: {
       title: "Basic Agent (100+ calls)",
       lines: [
@@ -417,7 +405,6 @@ export const HERO_FEATURES: HeroFeature[] = [
         "... 96 more grep calls ...",
         "",
         "Result: Still incomplete, lots of noise",
-        "Tokens spent: 50,000+ on context",
       ],
     },
     afterDemo: {
@@ -433,7 +420,6 @@ export const HERO_FEATURES: HeroFeature[] = [
         "Tool 5: code.getDefinition(symbol)",
         "",
         "Result: Complete, accurate, safe refactor",
-        "Tokens spent: 2,000 precise context",
       ],
     },
   },
@@ -453,7 +439,7 @@ export const COMPACT_FEATURES: CompactFeature[] = [
   },
   {
     title: "Token Optimization",
-    description: "5-20x fewer tokens for code review. Structural summaries instead of full files.",
+    description: "Structural summaries instead of full files for code review: changed signatures, callers and callees.",
     iconName: "zap",
   },
   {

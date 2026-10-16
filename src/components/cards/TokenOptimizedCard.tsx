@@ -20,8 +20,8 @@ export default function TokenOptimizedCard() {
       {/* Before */}
       <div>
         <div className="flex items-center justify-between mb-1">
-          <span className="text-danger">Before</span>
-          <span className="text-text-tertiary">142,000 tokens</span>
+          <span className="text-danger">Full files</span>
+          <span className="text-text-tertiary">whole source</span>
         </div>
         <div className="h-3 bg-white/[0.04] rounded-full overflow-hidden">
           <div
@@ -37,8 +37,8 @@ export default function TokenOptimizedCard() {
       {/* After */}
       <div>
         <div className="flex items-center justify-between mb-1">
-          <span className="text-success">After</span>
-          <span className="text-text-tertiary">2,800 tokens</span>
+          <span className="text-success">Structural summary</span>
+          <span className="text-text-tertiary">signatures only</span>
         </div>
         <div className="h-3 bg-white/[0.04] rounded-full overflow-hidden">
           <div
@@ -61,7 +61,7 @@ export default function TokenOptimizedCard() {
         }}
       >
         <span className="inline-block px-2 py-0.5 bg-success/10 text-success rounded text-[10px] font-semibold">
-          50x reduction
+          summary, not source
         </span>
       </div>
     </div>
