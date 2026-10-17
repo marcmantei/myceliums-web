@@ -47,7 +47,7 @@ const FEATURES: FeatureConfig[] = [
   },
   {
     title: "Impact Detection",
-    description: "Analyze the blast radius of any change before shipping. Traces through calls and imports to find every affected function and process.",
+    description: "Analyze the blast radius of any change before shipping. Traces a diff through calls and imports to the symbols and files it reaches.",
     icon: Waves,
     animation: ImpactDetectionCard,
     size: "large",

@@ -38,17 +38,17 @@ const BEFORE_LINES = [
 ];
 
 const AFTER_LINES = [
-  '$ myc query "MATCH (s:Symbol)',
+  '$ myc query "MATCH (c:CodeSymbol)-[:CALLS]->(s:CodeSymbol)',
   "  WHERE s.name = 'Button'",
-  '  RETURN s.name, s.file, count(*) as callers"',
+  '  RETURN s.name, s.file_path, count(c) AS callers"',
   "",
   "┌──────────┬──────────────────┬─────────┐",
-  "│ s.name   │ s.file           │ callers │",
+  "│ s.name   │ s.file_path      │ callers │",
   "├──────────┼──────────────────┼─────────┤",
   "│ Button   │ src/ui/Button    │ 47      │",
   "└──────────┴──────────────────┴─────────┘",
   "",
-  "✓ 1 query. Complete graph. 0.003s",
+  "✓ 1 query against the call graph.",
 ];
 
 const CAPABILITIES = [

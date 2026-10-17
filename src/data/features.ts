@@ -399,7 +399,7 @@ export const HERO_FEATURES: HeroFeature[] = [
         "$ grep -r 'class.*User'",
         "... more grep calls and file reads ...",
         "",
-        "Result: matching lines, no call structure",
+        "Result: matching lines; who calls whom is left to reading the files",
       ],
     },
     afterDemo: {

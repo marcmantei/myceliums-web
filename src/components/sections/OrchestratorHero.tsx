@@ -128,7 +128,7 @@ export default function OrchestratorHero() {
           <GlassCard className="orch-card p-5 lg:p-6">
             <p className="text-xs font-mono text-text-tertiary uppercase tracking-wider mb-2">Conflict prevention</p>
             <p className="text-2xl md:text-3xl font-bold text-accent">0 overlaps</p>
-            <p className="text-sm text-text-secondary mt-2">Impact detection shows each agent exactly what other agents might affect.</p>
+            <p className="text-sm text-text-secondary mt-2">Impact detection shows each agent which symbols and files another agent's change reaches.</p>
           </GlassCard>
           <GlassCard className="orch-card p-5 lg:p-6">
             <p className="text-xs font-mono text-text-tertiary uppercase tracking-wider mb-2">Parallel execution</p>
