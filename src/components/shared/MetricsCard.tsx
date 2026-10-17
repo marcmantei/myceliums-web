@@ -47,11 +47,15 @@ function AnimatedCounter({ value }: { value: string }) {
 }
 
 export default function MetricsCard({ metrics }: MetricsCardProps) {
-  const hasFootnote = metrics.some((m) => m.improvement.includes("*"));
+  if (metrics.length === 0) return null;
 
   return (
     <div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 mt-8">
+      <div
+        className={`grid sm:grid-cols-2 ${
+          metrics.length === 2 ? "" : "md:grid-cols-3"
+        } gap-4 lg:gap-6 mt-8`}
+      >
         {metrics.map((metric, i) => (
           <div
             key={i}
@@ -65,19 +69,6 @@ export default function MetricsCard({ metrics }: MetricsCardProps) {
           </div>
         ))}
       </div>
-      {hasFootnote && (
-        <p className="text-xs text-text-tertiary mt-3">
-          * Measured on standardized queries (caller lookup, blast radius, symbol search) across 6 open-source repos.{" "}
-          <a
-            href="https://github.com/marcmantei/myceliums/tree/main/benchmarks"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-accent/60 hover:text-accent transition-colors"
-          >
-            See methodology
-          </a>
-        </p>
-      )}
     </div>
   );
 }

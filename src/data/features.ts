@@ -96,11 +96,6 @@ export const HERO_FEATURES: HeroFeature[] = [
         improvement: "from manual parsing to automatic",
       },
       {
-        label: "Symbols parsed",
-        value: "38K",
-        improvement: "in Django alone",
-      },
-      {
         label: "Query time",
         value: "0.003s",
         improvement: "vs hours of manual tracing",
@@ -384,40 +379,27 @@ export const HERO_FEATURES: HeroFeature[] = [
     id: "mcp-integration",
     title: "MCP Integration",
     iconName: "plug",
-    painPoint: "Why do AI agents make 100+ blind grep calls when they could understand your entire codebase?",
+    painPoint: "Why do AI agents grep and read file after file when they could query the structure of your codebase?",
     tagline: "Give your AI agent real intelligence. Structured tools plus deep semantic context from the knowledge graph.",
     shortDescription: "Myceliums analyzes your codebase, builds a semantic knowledge graph, and exposes it to Claude, Cursor, and Windsurf via MCP. Your agent doesn't just get tools, it gets understanding: every symbol, relationship, and dependency, ready to reason about.",
-    metrics: [
-      {
-        label: "Tool calls reduced",
-        value: "~80%",
-        improvement: "15+ grep calls → 3 KG queries *",
-      },
-      {
-        label: "Context size reduced",
-        value: "~99%",
-        improvement: "50K tokens → 500 tokens per query *",
-      },
-      {
-        label: "Complete results",
-        value: "100%",
-        improvement: "full call chain, no missed callers *",
-      },
-    ],
+    // No metric cards: the three figures that stood here ("~80%" fewer tool
+    // calls, "~99%" smaller context, "100%" complete results) were footnoted as
+    // measured on the six-repo benchmark. That benchmark compares output size,
+    // with no agent in the loop and no check that the answers match.
+    metrics: [],
     beforeDemo: {
-      title: "Basic Agent (100+ calls)",
+      title: "Basic Agent (grep and read)",
       lines: [
         "User: 'Refactor getUserName safely'",
         "",
-        "Agent: Making blind grep calls...",
+        "Agent: Searching the text with grep...",
         "$ grep -r 'getUserName' .",
         "$ grep -r 'getUserName.*import'",
         "$ grep -r 'function.*User'",
         "$ grep -r 'class.*User'",
-        "... 96 more grep calls ...",
+        "... more grep calls and file reads ...",
         "",
-        "Result: Still incomplete, lots of noise",
-        "Tokens spent: 50,000+ on context",
+        "Result: matching lines, no call structure",
       ],
     },
     afterDemo: {
@@ -426,14 +408,13 @@ export const HERO_FEATURES: HeroFeature[] = [
         "User: 'Refactor getUserName safely'",
         "",
         "Agent: Using KG tools...",
-        "Tool 1: graph.getSymbol(name='getUserName')",
-        "Tool 2: graph.getCallers(symbol)",
-        "Tool 3: graph.getImpact(symbol)",
-        "Tool 4: graph.getRelated(symbol, depth=2)",
-        "Tool 5: code.getDefinition(symbol)",
+        "Tool 1: symbol_context('getUserName')",
+        "Tool 2: get_callers(symbol, max_depth=2)",
+        "Tool 3: get_callees(symbol)",
+        "Tool 4: get_symbol_definition(symbol)",
+        "Tool 5: detect_impact(diff)",
         "",
-        "Result: Complete, accurate, safe refactor",
-        "Tokens spent: 2,000 precise context",
+        "Result: callers and impact from the graph",
       ],
     },
   },
@@ -453,7 +434,7 @@ export const COMPACT_FEATURES: CompactFeature[] = [
   },
   {
     title: "Token Optimization",
-    description: "5-20x fewer tokens for code review. Structural summaries instead of full files.",
+    description: "Structural summaries instead of full files for code review: changed signatures, callers and callees.",
     iconName: "zap",
   },
   {

@@ -14,8 +14,9 @@ const USE_CASES = [
     icon: ShieldAlert,
     title: "Pre-deploy Safety",
     description:
-      "Run impact detection on every PR. Know exactly which functions, communities, and processes are affected before merging.",
-    command: "myc impact --diff HEAD~1",
+      "Run impact detection on every PR. See which symbols and files a change reaches through the call graph before merging.",
+    // --diff takes diff text or a .diff/.patch file, not a git ref.
+    command: 'myc impact --diff "$(git diff HEAD~1)"',
   },
   {
     icon: UserPlus,
@@ -35,8 +36,10 @@ const USE_CASES = [
     icon: GitPullRequest,
     title: "AI-Powered Code Review",
     description:
-      "Token-optimized context gives AI agents structured understanding instead of raw files. 50x fewer tokens, better reviews.",
-    command: "myc review --diff HEAD~1",
+      "Token-optimized context gives AI agents structural summaries of a diff (changed signatures, callers, callees) instead of raw files.",
+    // There is no `myc review` command: review context is the MCP tool
+    // get_review_context, served by `myc mcp`.
+    command: "myc mcp  # MCP tool: get_review_context",
   },
   {
     icon: BookOpen,
