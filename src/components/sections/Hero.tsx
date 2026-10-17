@@ -29,7 +29,7 @@ const CLI_LINES = [
   { type: "stats" as const, text: "Relationships: 45,028" },
   { type: "stats" as const, text: "Communities:   86" },
   { type: "stats" as const, text: "Processes:     214" },
-  { type: "success" as const, text: "✓ Analyzed in 1.6s" },
+  { type: "success" as const, text: "✓ Knowledge graph built" },
 ];
 
 function CliDemo() {
@@ -209,7 +209,7 @@ export default function Hero() {
               Myceliums parses your entire codebase, extracts every symbol
               and relationship, and embeds it into a semantic knowledge graph.
               Your AI agent gets the full picture: every dependency, every
-              call chain, every connection. It never misses context again.
+              call chain, every connection.
             </p>
 
             <div ref={ctaRef} className="mt-10 flex flex-wrap items-center gap-4">

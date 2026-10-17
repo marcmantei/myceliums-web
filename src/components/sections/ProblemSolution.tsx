@@ -22,26 +22,26 @@ const BEFORE_LINES = [
   "src/storage/tokens.ts:  class TokenStore {",
   "src/auth/validator.ts:  import { TokenStore } from '../storage';",
   "",
-  "... 47 tool calls later ...",
-  "// still missing 3 callers",
+  "... more greps and file reads ...",
+  "// callers have to be read out of the files",
 ];
 
 const AFTER_LINES = [
-  '$ myc query "MATCH (s)-[:CALLS*1..3]->(t)',
+  '$ myc query "MATCH (s:CodeSymbol)-[:CALLS]->(t:CodeSymbol)',
   '  WHERE t.name = \'handleAuth\'',
-  '  RETURN s.name, s.file"',
+  '  RETURN s.name, s.file_path"',
   "",
   "\u250C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510",
-  "\u2502 s.name              \u2502 s.file               \u2502",
+  "\u2502 s.name              \u2502 s.file_path          \u2502",
   "\u251C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524",
-  "\u2502 authMiddleware      \u2502 src/middleware/auth   \u2502",
-  "\u2502 loginRoute          \u2502 src/routes/login      \u2502",
-  "\u2502 oauthCallback       \u2502 src/routes/oauth      \u2502",
-  "\u2502 sessionRefresh      \u2502 src/auth/session      \u2502",
-  "\u2502 apiGateway          \u2502 src/gateway/main      \u2502",
+  "\u2502 authMiddleware      \u2502 src/middleware/auth  \u2502",
+  "\u2502 loginRoute          \u2502 src/routes/login     \u2502",
+  "\u2502 oauthCallback       \u2502 src/routes/oauth     \u2502",
+  "\u2502 sessionRefresh      \u2502 src/auth/session     \u2502",
+  "\u2502 apiGateway          \u2502 src/gateway/main     \u2502",
   "\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
   "",
-  "\u2713 1 query. Complete call chain. 0.003s",
+  "\u2713 1 query. Direct callers from the call graph.",
 ];
 
 function ScrollTypedTerminal({
@@ -492,7 +492,7 @@ export default function ProblemSolution() {
             <div className="flex items-center gap-2 mb-4">
               <div className="w-2 h-2 rounded-full bg-success" />
               <span className="text-sm font-medium text-success">Myceliums</span>
-              <span className="text-xs text-text-tertiary ml-auto font-mono">Structural queries, complete results</span>
+              <span className="text-xs text-text-tertiary ml-auto font-mono">Structural queries over the call graph</span>
             </div>
             <ScrollTypedTerminal
               lines={AFTER_LINES}

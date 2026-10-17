@@ -58,7 +58,7 @@ Building knowledge graph...
   Relationships: 45,028
   Communities:   86
   Processes:     214
-✓ Analyzed in 1.6s
+✓ Knowledge graph built
 
 $ myc search "handleAuth"
   1. handleAuth (Function) — auth.ts:14 [0.98]
