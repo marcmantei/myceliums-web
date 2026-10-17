@@ -51,7 +51,11 @@ export default function MetricsCard({ metrics }: MetricsCardProps) {
 
   return (
     <div>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 mt-8">
+      <div
+        className={`grid sm:grid-cols-2 ${
+          metrics.length === 2 ? "" : "md:grid-cols-3"
+        } gap-4 lg:gap-6 mt-8`}
+      >
         {metrics.map((metric, i) => (
           <div
             key={i}

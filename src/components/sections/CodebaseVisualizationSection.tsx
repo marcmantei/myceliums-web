@@ -17,7 +17,6 @@ const CodebaseVisualization = lazy(
 
 const METRICS = [
   { label: "Languages", value: "20+", improvement: "from manual parsing to automatic" },
-  { label: "Symbols parsed", value: "38K", improvement: "in Django alone" },
   { label: "Query time", value: "0.003s", improvement: "vs hours of manual tracing" },
 ];
 
